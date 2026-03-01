@@ -1,0 +1,41 @@
+{
+  "name": "pixelapi",
+  "version": "0.1.0",
+  "description": "Official JavaScript/TypeScript SDK for PixelAPI — AI image generation, background removal, upscaling, and audio generation API",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc && tsc --module esnext --outDir dist/esm",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "pixelapi", "ai", "image-generation", "background-removal",
+    "upscaling", "face-restoration", "audio-generation", "api",
+    "sdk", "text-to-image", "typescript"
+  ],
+  "author": "PixelAPI <support@pixelapi.dev>",
+  "license": "MIT",
+  "homepage": "https://pixelapi.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelapi/pixelapi-js"
+  },
+  "bugs": {
+    "url": "https://github.com/pixelapi/pixelapi-js/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
