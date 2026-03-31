@@ -22,29 +22,53 @@ export interface GenerateImageOptions {
 }
 
 export interface RemoveBackgroundOptions {
-  imageUrl: string;
+  image: string;
   [key: string]: unknown;
 }
 
 export interface UpscaleOptions {
-  imageUrl: string;
+  image: string;
+  scale?: number;
   [key: string]: unknown;
 }
 
 export interface RestoreFaceOptions {
-  imageUrl: string;
+  image: string;
   [key: string]: unknown;
 }
 
 export interface RemoveObjectOptions {
-  imageUrl: string;
-  maskUrl: string;
+  image: string;
+  mask: string;
   [key: string]: unknown;
 }
 
 export interface ReplaceBackgroundOptions {
-  imageUrl: string;
-  prompt: string;
+  image: string;
+  background?: string;
+  prompt?: string;
+  [key: string]: unknown;
+}
+
+export interface RemoveTextOptions {
+  image: string;
+  [key: string]: unknown;
+}
+
+export interface AddShadowOptions {
+  image: string;
+  shadowOpacity?: number;
+  shadowBlur?: number;
+  shadowOffsetX?: number;
+  shadowOffsetY?: number;
+  [key: string]: unknown;
+}
+
+export interface OutpaintOptions {
+  image: string;
+  direction?: string;
+  pixels?: number;
+  prompt?: string;
   [key: string]: unknown;
 }
 

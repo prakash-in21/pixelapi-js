@@ -15,6 +15,9 @@ import type {
   RestoreFaceOptions,
   RemoveObjectOptions,
   ReplaceBackgroundOptions,
+  RemoveTextOptions,
+  AddShadowOptions,
+  OutpaintOptions,
   GenerateAudioOptions,
   WaitOptions,
   PixelAPIOptions,
@@ -106,6 +109,21 @@ class ImageResource {
   async replaceBackground(options: ReplaceBackgroundOptions): Promise<Generation> {
     const body = toSnakeCase(options);
     return parseGeneration(await this.request("POST", "/v1/image/replace-background", body));
+  }
+
+  async removeText(options: RemoveTextOptions): Promise<Generation> {
+    const body = toSnakeCase(options);
+    return parseGeneration(await this.request("POST", "/v1/image/remove-text", body));
+  }
+
+  async addShadow(options: AddShadowOptions): Promise<Generation> {
+    const body = toSnakeCase(options);
+    return parseGeneration(await this.request("POST", "/v1/image/add-shadow", body));
+  }
+
+  async outpaint(options: OutpaintOptions): Promise<Generation> {
+    const body = toSnakeCase(options);
+    return parseGeneration(await this.request("POST", "/v1/image/outpaint", body));
   }
 }
 
